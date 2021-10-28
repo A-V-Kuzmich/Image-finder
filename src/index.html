@@ -16,12 +16,12 @@
   <body>
     <header></header>
     <main>
-      <form class="search-form" id="search-form">
-        <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
-      </form>
-      <ul class="gallery">
-        <!-- Список <li> с карточками изображений -->
-      </ul>
+      <include src="./partials/form.html"></include>
+      <include src="./partials/gallery.html"></include>
+
+      <div class="container">
+        <button class="button card__button" type="button" data-action="add">Add more</button>
+      </div>
     </main>
     <footer></footer>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
