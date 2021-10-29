@@ -1,7 +1,7 @@
 {{#each []}}
 <li>
-    <div class="photo-card">
-        <img src="{{webformatURL}}" alt="{{tags}}" />
+   {{!--  <div class="photo-card"> --}}
+        <img class="gallery__image" src="{{webformatURL}}" alt="{{tags}}" />
 
         <div class="stats">
             <p class="stats-item">
@@ -21,7 +21,7 @@
                 {{downloads}}
             </p>
         </div>
-    </div>
+  {{!--   </div> --}}
 </li>
 {{/each}}
 
