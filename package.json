@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "debounce": "^1.2.1",
+    "material-design-icons": "^3.0.1",
     "sweetalert": "^2.1.2"
   }
 }
