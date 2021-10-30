@@ -5,18 +5,19 @@ import {warning, clean} from './error.js';
 import refs from './refs';
 import imgCardTpl from '../templates/imgCard.hbs'
 
-const {gallery, input,backDrop,img,modalClose,modal} = refs;
+const {gallery, input} = refs;
 
-const timeGet = 1000;
+const timeGet = 2000;
 let page = 1;
 let qweryValue = '';
 
-//input.preventDefault();
-input.addEventListener('input', debounce((e) => {
-    qweryValue = e.target.value.trim();
-    check(qweryValue.length);
-}, timeGet));
-gallery.addEventListener
+
+input.addEventListener('input', debounce((e) => check(e.target.value.trim()), timeGet));
+
+input.addEventListener('submit', (e) => {
+    e.preventDefault();
+    check(e.target.value.trim());
+});
 
 function getImg(value) {
     fetchImg(value, page)
@@ -41,9 +42,10 @@ function clearGallery() {
     gallery.innerHTML = '';
 };
 function check(value) {
+    qweryValue = value;
     clean();
     clearGallery();
-    if (value < 0 || value === 0) {
+    if (value.length < 0 || value.length === 0) {
     return warning();
     } else {
        getImg(qweryValue); 
