@@ -1,3 +1,5 @@
+import {error} from './error.js';
+
 const BASE_URL = 'https://pixabay.com/api/';
 const KEY = '23365918-3471fb87d81c76e5978c01940';
 const numberOfResults = 12;
@@ -7,8 +9,7 @@ export function fetchImg(query, page) {
   return fetch(url)
     .then(response => {
       if (response.status === 404) {
-        return console.log('Ошибка загрузки: ' + response.status);
-        //return error(response.status);
+        return error(response.status);
       };
       return response.json()
     })
