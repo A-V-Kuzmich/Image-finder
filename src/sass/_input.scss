@@ -1,5 +1,7 @@
 .search-form {
-  margin-top: 30px;
+  margin-left: calc(100% / 2);
+  transform: translateX(-25%);
+  min-width: 300px;
 }
 .search-form > label {
   position: relative;
@@ -13,9 +15,6 @@
   transform: translate(50%, 50%);
   color: var(--accent-color);
 }
-/* .material-icons {
-  color: var(--accent-color);
-} */
 .input > input {
   width: 50%;
   border: 2px solid rgba(33, 33, 33, 0.2);
