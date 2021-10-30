@@ -11,10 +11,11 @@
   top: 0;
   left: 0;
   transform: translate(50%, 50%);
-}
-.material-icons {
   color: var(--accent-color);
 }
+/* .material-icons {
+  color: var(--accent-color);
+} */
 .input > input {
   width: 50%;
   border: 2px solid rgba(33, 33, 33, 0.2);

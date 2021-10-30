@@ -28,8 +28,8 @@ function getImg(value) {
         .then(()=>{page+=1});      
 };
 function renderTpl(imgCard) {
-    console.log(imgCard);
     gallery.insertAdjacentHTML('beforeend', imgCardTpl(imgCard));
+    observe();
 };
 function loadMore() {
         getImg(qweryValue);
@@ -37,4 +37,24 @@ function loadMore() {
 function clearGallery() {
     page = 1;
     gallery.innerHTML = '';
+};
+
+    const config = {
+    rootMargin: "0px",
+    treshold: 0.5,
+    };
+
+const observer = new IntersectionObserver(observCallback, config);
+
+function observCallback(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.nextElementSibling === null) {
+            getImg(qweryValue);
+        }
+    })
+    };
+
+function observe() {
+    const item = [...gallery.children];
+    item.forEach((item) => observer.observe(item));
 };
