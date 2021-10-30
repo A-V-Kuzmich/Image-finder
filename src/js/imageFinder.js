@@ -5,16 +5,18 @@ import {warning, clean} from './error.js';
 import refs from './refs';
 import imgCardTpl from '../templates/imgCard.hbs'
 
-const {gallery, input} = refs;
+const {gallery, input,backDrop,img,modalClose,modal} = refs;
 
 const timeGet = 1000;
 let page = 1;
 let qweryValue = '';
 
+//input.preventDefault();
 input.addEventListener('input', debounce((e) => {
     qweryValue = e.target.value.trim();
     check(qweryValue.length);
 }, timeGet));
+gallery.addEventListener
 
 function getImg(value) {
     fetchImg(value, page)
