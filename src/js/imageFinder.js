@@ -1,6 +1,7 @@
 import { debounce } from "debounce";
 import { fetchImg } from './apiService.js';
 import { observe } from './observer.js';
+import {warning, clean} from './error.js';
 import refs from './refs';
 import imgCardTpl from '../templates/imgCard.hbs'
 
@@ -11,16 +12,18 @@ let page = 1;
 let qweryValue = '';
 
 input.addEventListener('input', debounce((e) => {
-    qweryValue = e.target.value;
-    getImg(qweryValue);
-    clearGallery();
+    qweryValue = e.target.value.trim();
+    check(qweryValue.length);
 }, timeGet));
 
 function getImg(value) {
     fetchImg(value, page)
     .then(response => {
-            console.log(response, page);
-            renderTpl(response.hits);
+        console.log(response, page);
+        if (response.hits.length === 0) {
+            return warning();
+        }
+           renderTpl(response.hits);
         })
         .then(()=>{page+=1});      
 };
@@ -35,7 +38,12 @@ function clearGallery() {
     page = 1;
     gallery.innerHTML = '';
 };
-
 function check(value) {
-    if (value === ) { };
-}
+    clean();
+    clearGallery();
+    if (value < 0 || value === 0) {
+    return warning();
+    } else {
+       getImg(qweryValue); 
+    }
+};
