@@ -5,7 +5,7 @@ const KEY = '23365918-3471fb87d81c76e5978c01940';
 const numberOfResults = 12;
 
 export function fetchImg(query, page) {
-  const url = `${BASE_URL}?key=${KEY}&q=${query}&page=${page}&per_page=${numberOfResults}&`;
+  const url = `${BASE_URL}?key=${KEY}&q=${query}&page=${page}&per_page=${numberOfResults}&orientation=horizontal&`;
   return fetch(url)
     .then(response => {
       if (response.status === 404) {

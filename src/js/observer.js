@@ -14,6 +14,6 @@ function observCallback(entries) {
     })
 };
 export function observe() {
-    const item = [...refs.gallery.children];
-    item.forEach((item) => observer.observe(item));
+    const item = [...refs.gallery.children];   
+     item.forEach((item) => observer.observe(item));
 };

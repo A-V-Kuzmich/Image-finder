@@ -5,6 +5,7 @@
     modalClose: document.querySelector('[data-action="close-lightbox"]'),
     img: document.querySelector('.lightbox__image'),
     backDrop: document.querySelector('.lightbox__overlay'),
-    body: document.querySelector('body'),
+     body: document.querySelector('body'),
+    backToTop: document.querySelector('#back-to-top'),
 };
 export default refs;

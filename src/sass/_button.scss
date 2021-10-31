@@ -1,33 +1,36 @@
-.card__button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 16px;
-  max-width: 200px;
-}
-
-.button {
-  display: inline-flex;
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 5;
+  display: flex;
   align-items: center;
   justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: rgba(38, 38, 48, 0.6);
+  opacity: 0.7;
   color: #fff;
-  background-color: #21f3f0;
-  border: 0;
-  outline: 0;
-  padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.05);
-  font: inherit;
-  font-weight: 500;
-  user-select: none;
   transition: background-color 250ms var(--timing-function);
 
-  &:disabled {
-    background-color: #21f3f074;
-  }
   &:hover {
     box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
-    background-color: #21f3f0;
+    opacity: 1;
   }
+  & > a > span {
+    color: #fff;
+  }
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
