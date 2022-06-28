@@ -1,9 +1,10 @@
 import { debounce } from 'debounce';
 import { fetchImg } from './apiService.js';
 import { observe } from './observer.js';
-import { warning, clean } from './error.js';
+import { warning, clean, finish } from './error.js';
 import refs from './refs';
 import imgCardTpl from '../templates/imgCard.hbs';
+import { cleanStorage, setStorage, getStorage } from './storage.js';
 
 const { gallery, input } = refs;
 
@@ -12,7 +13,6 @@ let qweryValue = '';
 
 input.addEventListener('submit', e => {
   e.preventDefault();
-  console.log(e.target[0].value);
   check(e.target[0].value);
   e.target[0].value = '';
 });
@@ -20,8 +20,10 @@ input.addEventListener('submit', e => {
 function getImg(value) {
   fetchImg(value, page)
     .then(response => {
-      console.log(response, page);
       if (response.hits.length === 0) {
+        if (getStorage().length > 1) {
+          return finish();
+        }
         return warning();
       }
       renderTpl(response.hits);
@@ -31,7 +33,7 @@ function getImg(value) {
     });
 }
 function renderTpl(imgCard) {
-  console.log('before render', imgCard);
+  setStorage(imgCard);
   gallery.insertAdjacentHTML('beforeend', imgCardTpl(imgCard));
   observe();
 }
@@ -49,7 +51,7 @@ function check(value) {
   if (value.length < 0 || value.length === 0) {
     return warning();
   } else {
-    console.log('start getImg', qweryValue);
+    cleanStorage();
     getImg(qweryValue);
   }
 }

@@ -16,6 +16,7 @@
 .lightbox.is-open {
   opacity: 1;
   pointer-events: initial;
+  top: 0;
 }
 
 .lightbox__overlay {
@@ -25,15 +26,22 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .lightbox__content {
+  position: relative;
+  top: -500px;
   transform: scale(0.95);
-  transition: transform $animation-duration $timing-function;
+  transition: all 800ms $timing-function;
 }
 
 .lightbox.is-open .lightbox__content {
   transform: scale(1);
+  top: 0;
 }
 
 .lightbox__image {
@@ -66,12 +74,35 @@
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .lightbox__button:hover,
 .lightbox__button:focus {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .no-scrol {
   overflow: hidden;
+}
+.modal__stats {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 10px 8px 6px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0, transparent);
+  font-size: 14px;
+  color: #fff;
+}
+
+.modal__item {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  & > a {
+    color: aqua;
+  }
 }

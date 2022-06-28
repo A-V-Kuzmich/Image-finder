@@ -1,38 +1,37 @@
 import refs from './refs.js';
-const { gallery, backDrop, img, modalClose, modal, body } = refs;
+import { getStorage } from './storage.js';
+const { gallery, backDrop, modalClose, modal, body, content } = refs;
+import modalTemplates from '../templates/modalTemplates.hbs';
 
-//Открытие модального окна
-gallery.addEventListener('click', (item) => {
-    open(item)
+gallery.addEventListener('click', item => {
+  open(item);
 });
-//функция открытия модалки
-function open (el) {
+
+function open(el) {
   if (el.target.nodeName == 'IMG') {
-  modal.classList.add('is-open');
-  body.classList.add('no-scrol');
-  img.src = el.target.dataset.src;
-  img.alt = el.target.alt;
-  //закрытие по Х
-  modalClose.addEventListener('click', closeModal);
-  //закрытие при клике в "молоко"
-  backDrop.addEventListener('click', closeModal);
-  //Управление клавишами
-  window.addEventListener('keydown', (value) =>  key(value));
-}};
-//Функция нажатия клавиш
+    const idNumber = Number(el.target.id);
+    const objEl = getStorage().find(o => o.id === idNumber);
+    content.insertAdjacentHTML('afterbegin', modalTemplates(objEl));
+
+    modal.classList.add('is-open');
+    body.classList.add('no-scrol');
+
+    modalClose.addEventListener('click', closeModal);
+    backDrop.addEventListener('click', closeModal);
+    window.addEventListener('keydown', value => key(value));
+  }
+}
+
 function key(value) {
-  	if (value.code === 'Escape') {
-		closeModal(modal);
-  };
-};
-//функция закрытия модального окна
+  if (value.code === 'Escape') {
+    closeModal(modal);
+  }
+}
+
 function closeModal() {
-    modal.classList.remove('is-open');
-    body.classList.remove('no-scrol');
-      img.src = "";
-  img.alt = "";
-  //закрытие по Х
+  modal.classList.remove('is-open');
+  body.classList.remove('no-scrol');
   modalClose.removeEventListener('click', closeModal);
-  //закрытие при клике в "молоко"
   backDrop.removeEventListener('click', closeModal);
-};
+  content.innerHTML = '';
+}
