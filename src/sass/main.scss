@@ -1,10 +1,16 @@
-:root {
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --time: 250ms;
-  --accent-color: #2196f3;
-  --hover-focus-color: #188ce8;
-  --animation-duration: 250ms;
-}
+$animation-duration: 250ms;
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$color-light: rgba(255, 255, 255, 0.833);
+$color-dark: #2f2f2f;
+$bez: cubic-bezier(0, 0, 0.43, 1.49);
+$dur: 0.3s;
+$rad: 0.7rem;
+$color-brand: #57bd84;
+$font-fam: 'Lato', sans-serif;
+$mobile: 320px;
+$tablet: 720px;
+$desctop: 1024px;
+
 html {
   scroll-behavior: smooth;
 }
@@ -42,15 +48,29 @@ body {
   transition: color 150ms var(--timing-function), background-color 150ms var(--timing-function);
   font-size: 14px;
   letter-spacing: 0.03em;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
 }
 .container {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin: 15px 5px;
+
+  @media screen and (min-width: $tablet) {
+    margin: 30px 15px;
+  }
+}
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
-// Стили для файла с примером HTML-фрагмента
 @import './gallery';
 @import './input';
 @import './button';
