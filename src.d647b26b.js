@@ -32,4 +32,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/apiService.js"),require("./js/refs.js"),require("./js/imageFinder.js"),require("./js/observer.js"),require("./js/modal.js"),require("./js/scroll.js");
 },{"./sass/main.scss":"clu1","./js/apiService.js":"eQwa","./js/refs.js":"VyiV","./js/imageFinder.js":"me4w","./js/observer.js":"j64w","./js/modal.js":"RSqK","./js/scroll.js":"N8YO"}]},{},["Focm"], null)
-//# sourceMappingURL=/image-finder/src.e62c0d59.js.map
+//# sourceMappingURL=/Image-finder/src.d647b26b.js.map
