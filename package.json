@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://a-v-kuzmich.github.io/Image-finder",
+  "homepage": "https://A-V-Kuzmich.github.io/Image-finder",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /image-finder/"
+    "build": "parcel build src/*.html --public-url /Image-finder/"
   },
   "repository": {
     "type": "git",
