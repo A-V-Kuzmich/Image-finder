@@ -20,6 +20,7 @@ function open({ target }) {
     window.addEventListener('keydown', value => key(value));
     body.classList.add('no-scrol');
     modal.classList.add('is-open');
+
     const tags = document.querySelector('.tags');
     tags.addEventListener('click', e => getByTag(e));
   }
