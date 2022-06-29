@@ -47,6 +47,8 @@
         window.screen.height || document.documentElement.clientHeight || document.body.clientHeight;
 
       var x = document.getElementById('bg');
+      x.width = w;
+      x.height = h;
       x.innerHTML = 'Browser inner window width: ' + w + ', height: ' + h + '.';
     </script>
 
