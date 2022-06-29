@@ -26,7 +26,6 @@ function open({ target }) {
 }
 
 function getByTag({ target }) {
-  console.log(target.innerText);
   if (target.className == 'modal__tags') {
     check(target.innerText);
   }
