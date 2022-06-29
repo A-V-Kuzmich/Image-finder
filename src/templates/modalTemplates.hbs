@@ -1,7 +1,16 @@
-<img class="lightbox__image" src="{{largeImageURL}}" alt="{{type}}:{{tags}}" />
+<img class="lightbox__image" src="{{objEl.largeImageURL}}" alt="{{objEl.type}}:{{objEl.tags}} min-width="
+    {{objEl.webformatWidth}}" min-height="{{objEl.webformatHeight}}" />
+
 <ul class="modal__stats">
-    <li class="modal__item"><span>author: {{user}}</span></li>
-    <li class="modal__item"><span>Max Size for download: {{imageWidth}} x {{imageHeight}}</span></li>
-    <li class="modal__item"><a href="{{pageURL}}" rel="nofollow" target="_blank"
-            title="here you can download max size">download</a></li>
+    <li class="modal__item"><span>author: {{objEl.user}}</span></li>
+    <li class="modal__item "><span>Size: {{objEl.imageWidth}} x {{objEl.imageHeight}}</span></li>
+    <li class="modal__item"><a href="{{objEl.pageURL}}" rel="nofollow" target="_blank"
+            title="here you can download max size">download</a>
+    </li>
+    <li class="modal__item tags">
+        <span class="modal__tags-header">tags:</span>
+        {{#each tag}}
+        <span class="modal__tags">{{this}}</span>
+        {{/each}}
+    </li>
 </ul>

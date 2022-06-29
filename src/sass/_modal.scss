@@ -87,22 +87,60 @@
 .modal__stats {
   position: absolute;
   display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 10px 10px 8px 6px;
+  padding: 5px 5px 5px 5px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0, transparent);
-  font-size: 14px;
+  font-size: 10px;
   color: #fff;
+  min-width: 100vw;
+  opacity: 0;
+  transition: opacity $animation-duration $timing-function;
+  .lightbox__image:hover + & {
+    opacity: 1;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    padding: 10px 10px 8px 6px;
+  }
 }
 
 .modal__item {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   &:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
   & > a {
     color: aqua;
+    &:hover {
+      color: #fff;
+      transform: scale(1.1);
+      text-decoration-color: aqua;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    margin-right: 10px;
+  }
+}
+.modal__tags {
+  margin-left: 3px;
+  &:hover {
+    color: aqua;
+    cursor: pointer;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: 10px;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

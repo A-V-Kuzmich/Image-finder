@@ -1,30 +1,40 @@
 import refs from './refs.js';
 import { getStorage } from './storage.js';
-const { gallery, backDrop, modalClose, modal, body, content } = refs;
+const { gallery, backDrop, modalClose, modal, body, content, tags } = refs;
 import modalTemplates from '../templates/modalTemplates.hbs';
+import { check } from './imageFinder.js';
 
 gallery.addEventListener('click', item => {
   open(item);
 });
 
-function open(el) {
-  if (el.target.nodeName == 'IMG') {
-    const idNumber = Number(el.target.id);
-    const objEl = getStorage().find(o => o.id === idNumber);
-    content.insertAdjacentHTML('afterbegin', modalTemplates(objEl));
-
-    modal.classList.add('is-open');
-    body.classList.add('no-scrol');
+function open({ target }) {
+  if (target.nodeName == 'IMG') {
+    const idNumber = Number(target.id);
+    const objEl = getStorage().find(({ id }) => id === idNumber);
+    const tag = objEl.tags.split(',');
+    content.insertAdjacentHTML('afterbegin', modalTemplates({ objEl, tag }));
 
     modalClose.addEventListener('click', closeModal);
     backDrop.addEventListener('click', closeModal);
     window.addEventListener('keydown', value => key(value));
+    body.classList.add('no-scrol');
+    modal.classList.add('is-open');
+    const tags = document.querySelector('.tags');
+    tags.addEventListener('click', e => getByTag(e));
+  }
+}
+
+function getByTag({ target }) {
+  console.log(target.innerText);
+  if (target.className == 'modal__tags') {
+    check(target.innerText);
   }
 }
 
 function key(value) {
   if (value.code === 'Escape') {
-    closeModal(modal);
+    closeModal();
   }
 }
 

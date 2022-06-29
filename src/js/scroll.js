@@ -15,9 +15,3 @@ window.addEventListener('scroll', () => {
     backToTop.classList.add('visually-hidden');
   }
 });
-
-$('.round').click(function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-  $('.arrow').toggleClass('bounceAlpha');
-});

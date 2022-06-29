@@ -1,6 +1,6 @@
 $animation-duration: 250ms;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-$color-light: rgba(255, 255, 255, 0.833);
+$color-light: rgba(255, 255, 255, 0.95);
 $color-dark: #2f2f2f;
 $bez: cubic-bezier(0, 0, 0.43, 1.49);
 $dur: 0.3s;
@@ -49,6 +49,8 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
   box-sizing: border-box;
+  background: #acb1b1a6 url('../images//bricks-147309.svg') top no-repeat fixed;
+  background-size: cover;
 }
 button {
   cursor: pointer;

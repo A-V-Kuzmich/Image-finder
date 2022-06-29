@@ -44,7 +44,7 @@ function clearGallery() {
   page = 1;
   gallery.innerHTML = '';
 }
-function check(value) {
+export function check(value) {
   qweryValue = value;
   clean();
   clearGallery();
