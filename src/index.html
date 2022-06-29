@@ -39,6 +39,17 @@
     </main>
     <include src="./partials/modal.html"></include>
 
+    <script>
+      var w =
+        window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      var h =
+        window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+      var x = document.getElementById('wraper-bg');
+      x.innerHTML = 'Browser inner window width: ' + w + ', height: ' + h + '.';
+    </script>
+
     <script src="./index.js"></script>
   </body>
 </html>
