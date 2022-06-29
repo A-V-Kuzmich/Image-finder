@@ -1,8 +1,12 @@
 .center-con {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 75px;
+  right: 75px;
   z-index: 5;
+  @media screen and (min-width: $tablet) {
+    bottom: 50px;
+    right: 50px;
+  }
 }
 .round {
   position: absolute;

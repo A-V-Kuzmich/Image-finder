@@ -87,14 +87,14 @@
 .modal__stats {
   position: absolute;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   left: 0;
   right: 0;
   bottom: 0;
   padding: 5px 5px 5px 5px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0, transparent);
-  font-size: 10px;
+  font-size: 16px;
   color: #fff;
   min-width: 100vw;
   opacity: 0;
@@ -106,7 +106,7 @@
     opacity: 1;
   }
   @media screen and (min-width: $tablet) {
-    font-size: 16px;
+    font-size: 20px;
     padding: 10px 10px 8px 6px;
   }
 }
@@ -116,15 +116,19 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
+
   &:not(:last-child) {
     margin-right: 5px;
   }
   & > a {
     color: aqua;
+    text-decoration: none;
+    padding: 3px;
     &:hover {
       color: #fff;
       transform: scale(1.1);
-      text-decoration-color: aqua;
+      border: 1px solid aqua;
+      border-radius: 8px;
     }
   }
   @media screen and (min-width: $tablet) {
@@ -133,8 +137,12 @@
 }
 .modal__tags {
   margin-left: 3px;
+  padding: 3px;
+  border: 1px solid aqua;
+  border-radius: 8px;
   &:hover {
     color: aqua;
+    background-color: rgba(220, 245, 238, 0.25);
     cursor: pointer;
   }
   @media screen and (min-width: $tablet) {
