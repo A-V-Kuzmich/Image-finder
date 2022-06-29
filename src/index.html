@@ -22,7 +22,7 @@
     />
   </head>
   <body>
-    <div class="wraper-bg"></div>
+    <div class="wraper-bg" id="bg"></div>
     <header>
       <div class="visually-hidden center-con" id="back-to-top">
         <div class="round">
@@ -46,7 +46,7 @@
       var h =
         window.screen.height || document.documentElement.clientHeight || document.body.clientHeight;
 
-      var x = document.getElementById('wraper-bg');
+      var x = document.getElementById('bg');
       x.innerHTML = 'Browser inner window width: ' + w + ', height: ' + h + '.';
     </script>
 
