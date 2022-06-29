@@ -49,8 +49,8 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
   box-sizing: border-box;
-  background: #acb1b1a6 url('../images//bricks-147309.svg') top no-repeat fixed;
-  background-size: cover;
+  background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat fixed;
+  // background-size: cover;
   // background-attachment: fixed;
 }
 button {
