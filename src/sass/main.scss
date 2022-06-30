@@ -48,11 +48,13 @@ body {
   transition: color 150ms var(--timing-function), background-color 150ms var(--timing-function);
   font-size: 14px;
   letter-spacing: 0.03em;
-  // box-sizing: border-box;
-  background: #acb1b1a6 url('../images//bricks-147309.svg');
+  box-sizing: border-box;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../images//bricks-147309.svg');
   background-size: cover;
   background-attachment: fixed;
   background-position: 50%;
+  // linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/static/media/matrix.4afbb4ba.jpg);
 
   // background: #acb1b1a6 url('../images//bricks-147309.svg');
   // background-size: cover;
@@ -103,15 +105,13 @@ button {
 @import './modal';
 
 // .wraper-bg {
-//   position: fixed;
-// z-index: -1;
-// top: 0;
-// left: 0;
-// right: 0;
-// width: 100vw;
-// height: 100vh;
+//   // position: fixed;
+//   display: flex;
+//   grid-row: 1;
+//   // z-index: -1;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   width: 100vw;
 //   background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat;
-//   overflow-y: hiden;
-//   background-size: cover;
-// background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat;
 // }
