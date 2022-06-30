@@ -49,14 +49,12 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('../images//bricks-147309.svg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50%;
   // linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/static/media/matrix.4afbb4ba.jpg);
 
-  // background: #acb1b1a6 url('../images//bricks-147309.svg');
+  background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat fixed;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   // background-size: cover;
   // background-position: 50%;
   // width: 100vw;
@@ -78,6 +76,19 @@ body {
   //   background-attachment: fixed;
   // }
 }
+
+// .wraper-bg {
+//   // position: fixed;
+//   display: flex;
+//   grid-row: 1;
+//   // z-index: -1;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   width: 100vw;
+//   background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat;
+// }
+
 button {
   cursor: pointer;
 }
@@ -103,15 +114,3 @@ button {
 @import './input';
 @import './button';
 @import './modal';
-
-// .wraper-bg {
-//   // position: fixed;
-//   display: flex;
-//   grid-row: 1;
-//   // z-index: -1;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100vw;
-//   background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat;
-// }
