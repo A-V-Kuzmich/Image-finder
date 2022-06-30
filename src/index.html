@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1, maximum-scale=1"
+      id="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Andrey Kuzmichov" />
@@ -40,6 +41,48 @@
     <include src="./partials/modal.html"></include>
     <script src="./index.js"></script>
   </body>
+  <script>
+    // Global boolean variable that holds the current orientation
+    var pageInPortraitMode;
+
+    // Listen for window resizes to detect orientation changes
+    window.addEventListener('resize', windowSizeChanged);
+
+    // Set the global orientation variable as soon as the page loads
+    addEventListener('load', function () {
+      pageInPortraitMode = window.innerHeight > window.innerWidth;
+      document
+        .getElementById('viewport')
+        .setAttribute(
+          'content',
+          'width=' +
+            window.innerWidth +
+            ', height=' +
+            window.innerHeight +
+            ', initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+        );
+    });
+
+    // Adjust viewport values only if orientation has changed (not on every window resize)
+    function windowSizeChanged() {
+      if (
+        (pageInPortraitMode === true && window.innerHeight < window.innerWidth) ||
+        (pageInPortraitMode === false && window.innerHeight > window.innerWidth)
+      ) {
+        pageInPortraitMode = window.innerHeight > window.innerWidth;
+        document
+          .getElementById('viewport')
+          .setAttribute(
+            'content',
+            'width=' +
+              window.innerWidth +
+              ', height=' +
+              window.innerHeight +
+              ', initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+          );
+      }
+    }
+  </script>
 </html>
 
 <!-- <script>
