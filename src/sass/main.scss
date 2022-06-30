@@ -51,7 +51,10 @@ body {
   box-sizing: border-box;
   // linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/static/media/matrix.4afbb4ba.jpg);
 
-  background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat fixed;
+  background: #acb1b1a6 url('../images//bricks-147309.svg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50%;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
