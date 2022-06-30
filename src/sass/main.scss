@@ -49,48 +49,8 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
   box-sizing: border-box;
-  // linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/static/media/matrix.4afbb4ba.jpg);
-
-  background: #acb1b1a6 url('../images//bricks-147309.svg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50%;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  // background-size: cover;
-  // background-position: 50%;
-  // width: 100vw;
-  // height: 100vh;
-  // background-color: #e8e8e8;
-  // &::before {
-  //   content: '';
-  //   position: static;
-  //   z-index: -1;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   // bottom: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat fixed;
-  //   overflow: hidden;
-  //   background-size: cover;
-  //   background-attachment: fixed;
-  // }
+  background-color: #c6e1d4b3;
 }
-
-// .wraper-bg {
-//   // position: fixed;
-//   display: flex;
-//   grid-row: 1;
-//   // z-index: -1;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100vw;
-//   background: #acb1b1a6 url('../images//bricks-147309.svg') 50% / cover no-repeat;
-// }
 
 button {
   cursor: pointer;
